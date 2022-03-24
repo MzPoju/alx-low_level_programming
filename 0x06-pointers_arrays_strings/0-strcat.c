@@ -8,7 +8,7 @@ int main(void)
 
 	strcat(destination, source);
 
-	printf("Concatenated string: %s\n", destination);
+	printf("Concatenated String: %s\n", strcat(destination,source));
 
 	return(0);
 }
