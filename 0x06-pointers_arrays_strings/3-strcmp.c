@@ -17,5 +17,5 @@ int main(void)
 	else
 	printf("strings are not same")
 
-		return(0)
+		return(0);
 }
