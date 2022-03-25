@@ -1,7 +1,4 @@
 #include <main.h>
-
-
-
 #include <string.h>
 
 int main(void)
@@ -13,6 +10,6 @@ int main(void)
 
 	strcpy(str2,str1);
 	printf("Copied String(str2) is %s", str 2);
-
-}
 	
+	return (0);
+}
