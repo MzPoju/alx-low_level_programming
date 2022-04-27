@@ -6,6 +6,7 @@
  * @n: the data to add to the node
  * Return: address of the new element, NULL if failed
  */
+
 listint_t *add_nodeint(listint_t **head, const int n)
 {
 	listint_t *new;
@@ -18,4 +19,5 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	new->next = *head;
 	*head = new;
 	return (new);
+	
 }
