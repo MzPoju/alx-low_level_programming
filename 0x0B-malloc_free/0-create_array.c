@@ -1,34 +1,34 @@
+#include <stdlib.h>
 #include "main.h"
-#include <stdlib>
 
 /**
- * array_range - creates an array of integers
+ * *create_array - creates an array of chars,
+ * and initializes it with a specific char
+ * @size: size of the array to create
+ * @c: char to initialize the array c
  *
- * @min: the smallest integer in the array
- * @max: the largest integer in the array
- *
- * Return: the pointer to the newly created array, NULL if min> max,
- * NULL if malloc fails
+ * Return: pointer to the array (Success), NULL (Error)
  */
-
-int *array_range(int min, int max)
+char *create_array(unsigned int size, char c)
 {
-	int *ar;
-	int i;
-	int j = 0;
+	char *p;
+	unsigned int i = 0;
 
-	if (min > max)
+	if (size == 0)
 		return (NULL);
 
-	ar = malloc(sizeof(int) * (max - min + 1));
-	if (ar == NULL)
-		return (NULL);
+	p = (char *) malloc(sizeof(char) * size);
 
-	for (i = min; i <= max; i++)
+	if (p == NULL)
+		return (0);
+
+	while (i < size)
 	{
-		ar[j] = 1;
-		j++;
+		*(p + i) = c;
+		i++;
 	}
 
-	return (ar);
+	*(p + i) = '\0';
+
+	return (p);
 }
