@@ -1,21 +1,24 @@
-#include <main.h>
-#include <string.h>
+#include "main.h"
 
-int main(void)
+/**
+ * _strcmp - compares two strings
+ * @s1: first string to compare
+ * @s2: second string to compare
+ *
+ * Return: less than 0 if s1 is less than s2, 0 if they're equal,
+ * more than 0 if s1 is greater than s2
+ */
+int _strcmp(char *s1, char *s2)
 {
-	char str1[]; // declaration of char array
-	char str2[]; // declaration of char array
-	int value; // declaration of integer value
-	printf("Enter the first string : ");
-	scanf("%s",str2);
-	printf("Enter the second string : ");
-	scanf("%s",str2);
-	// comparing both the strings using strcmp() function
-	value=strcmp(str1,str2);
-	if(value==0)
-	printf("strings are same");
-	else
-	printf("strings are not same")
+	while (*s1 == *s2)
+	{
 
-		return(0);
+		if (*s1 == '\0')
+		{
+			return (0);
+		}
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
 }
