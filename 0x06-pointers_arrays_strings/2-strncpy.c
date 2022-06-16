@@ -1,15 +1,30 @@
 #include <main.h>
-#include <string.h>
 
-int main(void)
+/**
+ * _strncpy - copies a string
+ * @dest: destination string
+ * @src: source string
+ * @n: number of bytes to copy
+ *
+ * Return: pointer to the resulting string
+ */
+char *_strncpy(char *dest, char *src, int n)
 {
-	char str1[100],str2[50];
+	int i;
+      
+        i = 0;
 
-	printf("Enter string str1\n");
-	gets(str1);
+ 	while (src[i] != '\0' && i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
 
-	strcpy(str2,str1);
-	printf("Copied String(str2) is %s", str 2);
-	
-	return (0);
+ 	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+     
+        return (dest);
 }
