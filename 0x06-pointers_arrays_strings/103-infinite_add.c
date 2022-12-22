@@ -26,7 +26,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	dr1 = *(n1 +c1) - 48, dr2 = *(n2 +c2) - 48;
 	while (bg >= 0)
 	{
-		op = dr1 + dr2 +add;
+		op = dr1 + dr2 + add;
 		if (op >= 10)
 			add = 0;
 		else
@@ -40,7 +40,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		else
 			dr1 = 0;
 		id (c2 > 0)
-			c2--, dr2 = *(n2 +c2) - 48;
+			c2--, dr2 = *(n2 + c2) - 48;
 		else
 			dr2 = 0;
 		bg--, size_r--;
