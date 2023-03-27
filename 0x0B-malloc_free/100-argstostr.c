@@ -1,54 +1,42 @@
 #include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
- * argstostr - convert the params passed to the program to string
- * @ac: the argument count
- * @av: the argument vector
- *
- * Return: NULL if it fails
+ * argstostr - main entry
+ * @ac: int input
+ * @av: double pointer array
+ * Return: 0
  */
 char *argstostr(int ac, char **av)
 {
-	int ch = 0, i = 0, j = 0, k = 0;
-	char *s;
+	int i, n, k = 0, len = 0;
+	char *str;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	while (i < ac)
+	for (i = 0; i < ac; i++)
 	{
-		while (av[i][j])
-		{
-			ch++;
-			j++;
-		}
-
-		j = 0;
-		i++;
+		for (n = 0; av[i][n]; n++)
+			len++;
 	}
+	len += ac;
 
-	s = malloc((sizeof(char) * ch) + ac + 1);
+	str = malloc(sizeof(char) * len + 1);
+	if (str == NULL)
+		return (NULL);
 
-	i = 0;
-	while (av[i])
+	for (i = 0; i < ac; i++)
 	{
-		while (av[i][j])
+		for (n = 0; av[i][n]; n++)
 		{
-			s[k] = av[i][j];
+			str[k] = av[i][n];
 			k++;
-			j++;
 		}
-
-		s[k] = '\n';
-
-		j = 0;
-		k++;
-		i++;
+		if (str[k] == '\0')
+		{
+			str[k++] = '\n';
+		}
 	}
-
-	k++;
-	s[k] = '\0';
-	return (s);
+	return (str);
 }
